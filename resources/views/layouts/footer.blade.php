@@ -1,61 +1,59 @@
 <footer id="kontak" class="relative">
 
     {{-- ===== TOP BAR: WHATSAPP CTA ===== --}}
-    <div class="relative h-[99px]">
-        <div class="absolute inset-0 flex">
+    <div class="relative min-h-[80px] sm:min-h-[90px] lg:min-h-[99px]">
+    <div class="absolute inset-0 flex flex-col sm:flex-row">
 
-            {{-- Bagian merah (dirapikan pakai container max-w-6xl supaya sejajar dengan logo putih) --}}
-            <div class="bg-[#DD2A2A] flex-1 flex items-center">
-                <div class="w-full max-w-4xl mx-auto px-6 lg:px-12">
-                    <div class="flex items-center gap-4 md:gap-6">
-                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                            {{-- Bisa ganti PNG / SVG WA di sini --}}
-                            <img
-                                src="{{ asset('images/logo-wa.png') }}"
-                                alt="WhatsApp"
-                                class="w-9 h-9 object-contain"
-                            />
-                        </div>
+        {{-- Bagian merah --}}
+        <div class="bg-[#DD2A2A] flex-1 flex items-center py-4 sm:py-0">
+            <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-12">
+                <div class="flex items-center gap-3 sm:gap-4 md:gap-6">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                        <img
+                            src="{{ asset('images/logo-wa.png') }}"
+                            alt="WhatsApp"
+                            class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
+                        />
+                    </div>
 
-                        <div>
-                            <h3 class="font-poppins font-semibold text-2xl md:text-3xl text-white uppercase leading-tight">
-                                Hubungi Kami!
-                            </h3>
-                            <p class="font-poppins text-base md:text-lg text-black capitalize">
-                                Untuk pertanyaan lebih lanjut
-                            </p>
-                        </div>
+                    <div class="min-w-0">
+                        <h3 class="font-poppins font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl text-white uppercase leading-tight">
+                            Hubungi Kami!
+                        </h3>
+                        <p class="font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-black capitalize truncate">
+                            Untuk pertanyaan lebih lanjut
+                        </p>
                     </div>
                 </div>
             </div>
-
-            {{-- Bagian hitam (tetap) --}}
-            <div class="bg-black w-[260px] md:w-[360px] lg:w-[521px] flex items-center justify-center">
-                <a
-                    href="https://wa.me/6289639126343"
-                    target="_blank"
-                    rel="noopener"
-                    class="bg-[#60D669] hover:bg-[#50C659] text-white px-5 md:px-7 py-3 md:py-3.5 rounded-lg
-                           font-poppins font-semibold flex items-center gap-3
-                           transition-all hover:scale-105 active:scale-95"
-                >
-                    {{-- Icon WA kecil --}}
-                    <img
-                        src="{{ asset('images/wa-white.png') }}"
-                        alt="WhatsApp"
-                        class="w-6 h-6 md:w-7 md:h-7 object-contain"
-                    />
-                    <span class="text-sm md:text-base">
-                        Hubungi Sekarang
-                    </span>
-                </a>
-            </div>
-
         </div>
+
+        {{-- Bagian hitam --}}
+        <div class="bg-black w-full sm:w-[240px] md:w-[300px] lg:w-[360px] xl:w-[521px] flex items-center justify-center py-4 sm:py-0">
+            <a
+                href="https://wa.me/6289639126343"
+                target="_blank"
+                rel="noopener"
+                class="bg-[#60D669] hover:bg-[#50C659] text-white px-4 sm:px-5 md:px-6 lg:px-7 py-2.5 sm:py-3 md:py-3.5 rounded-lg
+                       font-poppins font-semibold flex items-center gap-2 sm:gap-3
+                       transition-all hover:scale-105 active:scale-95"
+            >
+                <img
+                    src="{{ asset('images/wa-white.png') }}"
+                    alt="WhatsApp"
+                    class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain"
+                />
+                <span class="text-xs sm:text-sm md:text-base whitespace-nowrap">
+                    Hubungi Sekarang
+                </span>
+            </a>
+        </div>
+
     </div>
+</div>
 
     {{-- ===== MAIN FOOTER ===== --}}
-    <div class="bg-[#191F23] py-16">
+    <div class="bg-[#191F23] py-16 pt-20 sm:pt-16">
         <div class="max-w-6xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
 
@@ -82,7 +80,7 @@
                     <ul class="space-y-2 font-poppins text-sm md:text-base text-white capitalize">
                         <li class="flex items-start">
                             <span class="mr-2">•</span>
-                            <a href="" class="hover:text-[#DD2A2A] transition-colors">Beranda</a>
+                            <a href="#beranda" class="hover:text-[#DD2A2A] transition-colors">Beranda</a>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2">•</span>
@@ -126,10 +124,10 @@
                     </h3>
                     <div class="w-[131px] h-0.5 bg-[#DD2A2A] mb-6"></div>
 
-                    <div class="space-y-5 text-white/80">
+                    <div class="space-y-3 text-white/80">
 
                         {{-- WhatsApp --}}
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
                             <img 
                                 src="{{ asset('images/wa-white.png') }}"
                                 alt="WhatsApp"
@@ -141,7 +139,7 @@
                         </div>
 
                         {{-- Instagram --}}
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
                             <img src="{{ asset('images/instagram-white.png') }}" alt="Instagram" class="w-5 h-5 md:w-6 md:h-6">
                             <p class="font-poppins text-[11px] md:text-sm lowercase">
                                 isuzusalesjakarta
@@ -149,7 +147,7 @@
                         </div>
 
                         {{-- TikTok --}}
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
                             <img src="{{ asset('images/tiktok-white.png') }}" alt="TikTok" class="w-5 h-5 md:w-6 md:h-6">
                             <p class="font-poppins text-[11px] md:text-sm lowercase">
                                 hanhanite
@@ -157,7 +155,7 @@
                         </div>
 
                         {{-- Email --}}
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
                             <img src="{{ asset('images/gmail-white.png') }}" alt="Email" class="w-5 h-5 md:w-6 md:h-6">
                             <p class="font-poppins text-[11px] md:text-sm lowercase">
                                 email@example.com
