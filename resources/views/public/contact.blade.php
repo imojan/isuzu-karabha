@@ -216,8 +216,8 @@
                     <div class="pt-2">
                         <button
                             class="inline-flex w-full items-center justify-center rounded-full
-                                   bg-emerald-800 px-6 py-3 text-sm font-semibold text-white
-                                   shadow-sm hover:bg-emerald-600 active:scale-[0.99]
+                                   bg-red-600 px-6 py-3 text-sm font-semibold text-white
+                                   shadow-sm hover:bg-red-500 active:scale-[0.99]
                                    transition-transform"
                         >
                             Kirim Pesan
