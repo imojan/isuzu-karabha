@@ -93,4 +93,6 @@ Simpan screenshot ke folder /public/screenshots/ lalu masukkan seperti ini:
 ```
 ![Home](public/screenshots/home.png)
 ![Promo](public/screenshots/promo.png)
+![Artikel](public/screenshots/artikel.png)
+![Gallery](public/screenshots/gallery.png)
 ```
