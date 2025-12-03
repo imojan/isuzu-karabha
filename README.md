@@ -88,10 +88,4 @@ php artisan serve
 /routes
   web.php
 ```
-📸 Screenshots (Opsional)
-Simpan screenshot ke folder /public/screenshots/ lalu masukkan seperti ini:
-```
-![Home](/screenshots/home.png)
-![Promo](/screenshots/promo.png)
-![Articles](/screenshots/articles.png)
-```
+
