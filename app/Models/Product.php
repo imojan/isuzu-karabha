@@ -10,12 +10,18 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'slug', 'image', 'excerpt', 'body',
+        'name',
+        'slug',
+        'image',
+        'excerpt',
+        'body',
+        'specifications',   // <--- tambahkan ini
         'is_published',
     ];
 
     protected $casts = [
-        'is_published' => 'boolean',
+        'is_published'   => 'boolean',
+        'specifications' => 'array',     // <--- tambahkan ini
     ];
 
     public function scopePublished($q)

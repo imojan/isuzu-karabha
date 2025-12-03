@@ -20,7 +20,7 @@
                         <h3 class="font-poppins font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl text-white uppercase leading-tight">
                             Hubungi Kami!
                         </h3>
-                        <p class="font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-black capitalize truncate">
+                        <p class="font-poppins text-xs sm:text-sm md:text-base lg:text-lg text-white capitalize truncate">
                             Untuk pertanyaan lebih lanjut
                         </p>
                     </div>
