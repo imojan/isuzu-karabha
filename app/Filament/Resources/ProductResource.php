@@ -20,49 +20,88 @@ class ProductResource extends \Filament\Resources\Resource
     public static function form(Form $form): Form
 {
     return $form->schema([
-        Forms\Components\Section::make('Data Produk')->columns(2)->schema([
-            // 🟢 Nama otomatis mengisi slug saat diisi
-            Forms\Components\TextInput::make('name')
-                ->label('Nama')
-                ->required()
-                ->maxLength(150)
-                ->live(onBlur: true) // generate slug saat user keluar dari field
-                ->afterStateUpdated(function (Forms\Set $set, ?string $state) {
-                    if ($state) {
-                        $set('slug', \Illuminate\Support\Str::slug($state));
-                    }
-                }),
+        // =========================
+        // SECTION: DATA PRODUK
+        // =========================
+        Forms\Components\Section::make('Data Produk')
+            ->columns(2)
+            ->schema([
+                // Nama → auto generate slug
+                Forms\Components\TextInput::make('name')
+                    ->label('Nama')
+                    ->required()
+                    ->maxLength(150)
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Forms\Set $set, ?string $state) {
+                        if ($state) {
+                            $set('slug', \Illuminate\Support\Str::slug($state));
+                        }
+                    }),
 
-            // 🟢 Slug bisa dikosongkan, akan otomatis dibuat oleh hook di bawah
-            Forms\Components\TextInput::make('slug')
-                ->label('Slug')
-                ->unique(ignoreRecord: true)
-                ->helperText('Kosongkan untuk otomatis dari nama')
-                ->nullable(),
+                // Slug bisa dikosongkan
+                Forms\Components\TextInput::make('slug')
+                    ->label('Slug')
+                    ->unique(ignoreRecord: true)
+                    ->helperText('Kosongkan untuk otomatis dari nama')
+                    ->nullable(),
 
-            Forms\Components\FileUpload::make('image')
-                ->label('Gambar')
-                ->directory('products')
-                ->disk('public')
-                ->image()
-                ->imageEditor()
-                ->columnSpanFull(),
+                Forms\Components\FileUpload::make('image')
+                    ->label('Gambar')
+                    ->directory('products')
+                    ->disk('public')
+                    ->image()
+                    ->imageEditor()
+                    ->columnSpanFull(),
 
-            Forms\Components\Textarea::make('excerpt')
-                ->rows(3)
-                ->label('Ringkasan')
-                ->columnSpanFull(),
+                Forms\Components\Textarea::make('excerpt')
+                    ->rows(3)
+                    ->label('Ringkasan')
+                    ->columnSpanFull(),
 
-            Forms\Components\RichEditor::make('body')
-                ->label('Deskripsi / Spesifikasi')
-                ->columnSpanFull(),
+                Forms\Components\RichEditor::make('body')
+                    ->label('Deskripsi Produk')
+                    ->columnSpanFull(),
 
-            Forms\Components\Toggle::make('is_published')
-                ->label('Tayang?')
-                ->default(true),
-        ]),
+                Forms\Components\Toggle::make('is_published')
+                    ->label('Tayang?')
+                    ->default(true),
+            ]),
+
+        // =========================
+        // SECTION: SPESIFIKASI PRODUK
+        // =========================
+        Forms\Components\Section::make('Spesifikasi Produk')
+            ->description('Kelompokkan spesifikasi seperti: Mesin, Dimensi, Kargo, dll.')
+            ->schema([
+                Forms\Components\Repeater::make('specifications')
+                    ->label('Kelompok Spesifikasi')
+                    ->schema([
+                        Forms\Components\TextInput::make('group')
+                            ->label('Nama Kelompok (misal: Mesin, Dimensi)')
+                            ->required(),
+
+                        Forms\Components\Repeater::make('items')
+                            ->label('Detail Spesifikasi')
+                            ->schema([
+                                Forms\Components\TextInput::make('label')
+                                    ->label('Nama Item')
+                                    ->placeholder('Contoh: Tipe, Kapasitas, Tenaga')
+                                    ->required(),
+                                Forms\Components\TextInput::make('value')
+                                    ->label('Nilai')
+                                    ->placeholder('Contoh: 4JA1-CR Common Rail')
+                                    ->required(),
+                            ])
+                            ->minItems(1)
+                            ->columns(2),
+                    ])
+                    ->collapsible()
+                    ->itemLabel(fn (array $state): ?string => $state['group'] ?? null),
+            ])
+            ->columnSpanFull(),
     ]);
 }
+
 
 
     public static function table(Table $table): Table

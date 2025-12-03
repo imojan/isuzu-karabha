@@ -41,14 +41,15 @@
                     </h2>
                     <p class="text-xs md:text-sm text-white/80 leading-relaxed max-w-md">
                         Bila Anda memiliki pertanyaan atau membutuhkan penawaran,
-                        Anda dapat menghubungi kami melalui informasi kontak di bawah
+                        Anda dapat menghubungi sales kami melalui informasi kontak di bawah
                         atau mengisi formulir di sebelah kanan.
                     </p>
                 </div>
 
-                {{-- Sales Profile (buat foto sales) --}}
-                <div class="relative z-10 flex items-center gap-4">
-                    <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/60">
+                {{-- Sales Profile (foto sales) --}}
+                <div class="relative z-10 flex items-center gap-4 md:gap-5">
+                    {{-- frame square 1:1, lebih besar --}}
+                    <div class="w-24 h-24 md:w-28 md:h-28 rounded-2xl overflow-hidden border-2 border-white/70">
                         <img
                             src="{{ asset('images/hani-nurul.jpeg') }}"
                             alt="Sales Isuzu"
@@ -57,10 +58,10 @@
                     </div>
                     <div>
                         <p class="font-poppins font-semibold text-sm md:text-base">
-                            Nama Sales Utama
+                            Nurul Hanifah
                         </p>
                         <p class="text-xs md:text-sm text-white/80">
-                            Konsultan Penjualan Isuzu Jakarta
+                            Sales
                         </p>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-poppins">0812-1111-8456</p>
+                            <p class="font-poppins">0896-3912-6343</p>
                             <p class="text-xs text-white/70 mt-0.5">Tersedia via WhatsApp & Telepon</p>
                         </div>
                     </div>
@@ -118,8 +119,9 @@
                             </svg>
                         </div>
                         <div class="text-xs md:text-sm text-white/90 leading-relaxed">
-                            Gedung Graha Ganesha, Lantai 1 Suite 120 &amp; 130<br>
-                            Jl. Contoh Alamat No. 28, Jakarta Timur, DKI Jakarta
+                            Jl. Perintis Kemerdekaan No.39, RT.1/RW.1, Pulo Gadung, <br>
+                            Kec. Pulo Gadung, Kota Jakarta Timur, <br>
+                            Daerah Khusus Ibukota Jakarta |13260.
                         </div>
                     </div>
 
@@ -131,70 +133,67 @@
                 <form method="post" action="{{ route('contact.submit') }}" class="space-y-5">
                     @csrf
 
-                    <div class="grid gap-5 md:grid-cols-2">
-                        <div>
-                            <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
-                                Nama <span class="text-red-500">*</span>
-                            </label>
-                            <input
-                                name="name"
-                                value="{{ old('name') }}"
-                                required
-                                class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
-                                       focus:outline-none focus:ring-2 focus:ring-[#006B43]/40 focus:border-[#006B43]"
-                            >
-                            @error('name')
-                                <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
-                                Email
-                            </label>
-                            <input
-                                name="email"
-                                type="email"
-                                value="{{ old('email') }}"
-                                class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
-                                       focus:outline-none focus:ring-2 focus:ring-[#006B43]/40 focus:border-[#006B43]"
-                            >
-                            @error('email')
-                                <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+                    {{-- 1 field per baris --}}
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
+                            Nama <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            name="name"
+                            value="{{ old('name') }}"
+                            required
+                            class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-[#DD2A2A]/40 focus:border-[#DD2A2A]"
+                        >
+                        @error('name')
+                            <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
+                        @enderror
                     </div>
 
-                    <div class="grid gap-5 md:grid-cols-2">
-                        <div>
-                            <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
-                                No. HP
-                            </label>
-                            <input
-                                name="phone"
-                                value="{{ old('phone') }}"
-                                class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
-                                       focus:outline-none focus:ring-2 focus:ring-[#006B43]/40 focus:border-[#006B43]"
-                            >
-                            @error('phone')
-                                <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
+                            Email
+                        </label>
+                        <input
+                            name="email"
+                            type="email"
+                            value="{{ old('email') }}"
+                            class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-[#DD2A2A]/40 focus:border-[#DD2A2A]"
+                        >
+                        @error('email')
+                            <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                        <div>
-                            <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
-                                Subjek
-                            </label>
-                            <input
-                                name="subject"
-                                value="{{ old('subject') }}"
-                                class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
-                                       focus:outline-none focus:ring-2 focus:ring-[#006B43]/40 focus:border-[#006B43]"
-                            >
-                            @error('subject')
-                                <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
+                            No. HP
+                        </label>
+                        <input
+                            name="phone"
+                            value="{{ old('phone') }}"
+                            class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-[#DD2A2A]/40 focus:border-[#DD2A2A]"
+                        >
+                        @error('phone')
+                            <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 uppercase tracking-wide">
+                            Subjek
+                        </label>
+                        <input
+                            name="subject"
+                            value="{{ old('subject') }}"
+                            class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-[#DD2A2A]/40 focus:border-[#DD2A2A]"
+                        >
+                        @error('subject')
+                            <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div>
@@ -206,7 +205,7 @@
                             rows="6"
                             required
                             class="mt-1 w-full rounded-2xl border border-slate-300 px-3 py-2.5 text-sm
-                                   focus:outline-none focus:ring-2 focus:ring-[#006B43]/40 focus:border-[#006B43] resize-y"
+                                   focus:outline-none focus:ring-2 focus:ring-[#DD2A2A]/40 focus:border-[#DD2A2A] resize-y"
                         >{{ old('message') }}</textarea>
                         @error('message')
                             <div class="text-xs text-red-600 mt-1">{{ $message }}</div>
@@ -217,8 +216,8 @@
                     <div class="pt-2">
                         <button
                             class="inline-flex w-full items-center justify-center rounded-full
-                                   bg-[#006B43] px-6 py-3 text-sm font-semibold text-white
-                                   shadow-sm hover:bg-[#005637] active:scale-[0.99]
+                                   bg-emerald-800 px-6 py-3 text-sm font-semibold text-white
+                                   shadow-sm hover:bg-emerald-600 active:scale-[0.99]
                                    transition-transform"
                         >
                             Kirim Pesan
