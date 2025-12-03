@@ -1,4 +1,4 @@
-# 🚗 Isuzu Karabha – Marketing Website (Laravel)
+# 🚗 Isuzu Karabha – MarketingWeb Application for Marketing
 
 ---
 
@@ -93,4 +93,5 @@ Simpan screenshot ke folder /public/screenshots/ lalu masukkan seperti ini:
 ```
 ![Home](public/screenshots/home.png)
 ![Promo](public/screenshots/promo.png)
+! [Articles] (public/screenshots/articles.png)
 ```
