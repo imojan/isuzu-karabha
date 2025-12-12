@@ -118,52 +118,87 @@
                 </div>
 
                 {{-- Contact --}}
-                <div>
-                    <h3 class="font-poppins font-semibold text-xl md:text-2xl text-white capitalize mb-3">
-                        Kontak Kami
-                    </h3>
-                    <div class="w-[131px] h-0.5 bg-[#DD2A2A] mb-6"></div>
+<div>
+    <h3 class="font-poppins font-semibold text-xl md:text-2xl text-white capitalize mb-3">
+        Kontak Kami
+    </h3>
+    <div class="w-[131px] h-0.5 bg-[#DD2A2A] mb-6"></div>
 
-                    <div class="space-y-3 text-white/80">
+    <div class="space-y-4 text-white/90">
 
-                        {{-- WhatsApp --}}
-                        <div class="flex items-center gap-3">
-                            <img 
-                                src="{{ asset('images/wa-white.png') }}"
-                                alt="WhatsApp"
-                                class="w-5 h-5 md:w-6 md:h-6"
-                            />
-                            <p class="font-poppins text-[11px] md:text-sm capitalize whitespace-nowrap">
-                                089639126343 — (24/7 Consultation)
-                            </p>
-                        </div>
+        {{-- WhatsApp --}}
+        <a 
+            href="https://wa.me/6289639126343"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Isuzu Sales Jakarta"
+            class="flex items-center gap-3 hover:text-white transition"
+        >
+            <img
+                src="{{ asset('images/wa-white.png') }}"
+                alt="WhatsApp"
+                class="w-5 h-5 md:w-6 md:h-6 shrink-0"
+            />
+            <span class="font-poppins text-[11px] md:text-sm whitespace-nowrap">
+                0896 3912 6343 — (24/7 Consultation)
+            </span>
+        </a>
 
-                        {{-- Instagram --}}
-                        <div class="flex items-center gap-3">
-                            <img src="{{ asset('images/instagram-white.png') }}" alt="Instagram" class="w-5 h-5 md:w-6 md:h-6">
-                            <p class="font-poppins text-[11px] md:text-sm lowercase">
-                                isuzusalesjakarta
-                            </p>
-                        </div>
+        {{-- Instagram --}}
+        <a 
+            href="https://www.instagram.com/isuzusalesjakarta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Isuzu Sales Jakarta"
+            class="flex items-center gap-3 hover:text-white transition"
+        >
+            <img
+                src="{{ asset('images/instagram-white.png') }}"
+                alt="Instagram"
+                class="w-5 h-5 md:w-6 md:h-6 shrink-0"
+            />
+            <span class="font-poppins text-[11px] md:text-sm lowercase whitespace-nowrap truncate">
+                @isuzusalesjakarta
+            </span>
+        </a>
 
-                        {{-- TikTok --}}
-                        <div class="flex items-center gap-3">
-                            <img src="{{ asset('images/tiktok-white.png') }}" alt="TikTok" class="w-5 h-5 md:w-6 md:h-6">
-                            <p class="font-poppins text-[11px] md:text-sm lowercase">
-                                hanhanite
-                            </p>
-                        </div>
+        {{-- TikTok --}}
+        <a 
+            href="https://www.tiktok.com/@hanhanite?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok Isuzu Sales Jakarta"
+            class="flex items-center gap-3 hover:text-white transition"
+        >
+            <img
+                src="{{ asset('images/tiktok-white.png') }}"
+                alt="TikTok"
+                class="w-5 h-5 md:w-6 md:h-6 shrink-0"
+            />
+            <span class="font-poppins text-[11px] md:text-sm whitespace-nowrap">
+                @hanhanite | Sales Happy Happy
+            </span>
+        </a>
 
-                        {{-- Email --}}
-                        <div class="flex items-center gap-3">
-                            <img src="{{ asset('images/gmail-white.png') }}" alt="Email" class="w-5 h-5 md:w-6 md:h-6">
-                            <p class="font-poppins text-[11px] md:text-sm lowercase">
-                                email@example.com
-                            </p>
-                        </div>
+        {{-- Email --}}
+        <a 
+            href="mailto:nurulhanifawibowo@gmail.com"
+            aria-label="Email Isuzu Sales Jakarta"
+            class="flex items-center gap-3 hover:text-white transition"
+        >
+            <img
+                src="{{ asset('images/gmail-white.png') }}"
+                alt="Email"
+                class="w-5 h-5 md:w-6 md:h-6 shrink-0"
+            />
+            <span class="font-poppins text-[11px] md:text-sm lowercase whitespace-nowrap">
+                nurulhanifawibowo@gmail.com
+            </span>
+        </a>
 
-                    </div>
-                </div>
+    </div>
+</div>
+
 
             </div>
         </div>

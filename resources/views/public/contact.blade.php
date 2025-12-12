@@ -100,7 +100,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-poppins">hello@isuzukarabha.co.id</p>
+                            <p class="font-poppins">nurulhanifawibowo@gmail.com</p>
                         </div>
                     </div>
 
